@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Shop
+{% endblock %}
+
+{% block main %}
+    <form action="/shop" method="post">
+        <div class="form-group">
+            <a>Enter good's id: </a>
+            <input class="form-control" name="buy" autocomplete="off" autofocus class="form-control" type="text" placeholder="ID">
+        </div>
+        <button class="btn btn-primary" type="submit">Buy</button>
+        <div class="container">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Good ID</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Upload Time</th>
+                        <th scope="col">Author ID</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for good in goods %}
+                        <tr>
+                            <td>{{ good["GoodId"] }}</td>
+                            <td>{{ good["Title"] }}</td>
+                            <td>{{ good["UploadTime"] }}</td>
+                            <td>{{ good["UserId"] }}</td>
+                            <td>USD {{ good["Price"] }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+            </table>
+        </div>
+    </form>
+{% endblock %}

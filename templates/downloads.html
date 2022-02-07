@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Downloads
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Link</th>
+                    <th scope="col">Author ID</th>
+                    <th scope="col">Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for download in downloads %}
+                    <tr>
+                        <td>{{ download["Title"] }}</td>
+                        <td>{{ download["Link"] }}</td>
+                        <td>{{ download["UserId"] }}</td>
+                        <td>USD {{ download["Price"] }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+        </table>
+   </div>
+{% endblock %}

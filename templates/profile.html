@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ profile_name }}
+{% endblock %}
+
+{% block main %}
+    <form action="/profile" method="POST">
+        <div class="form-group">
+            <!--img src="/static/source/sample.png" url="Profile Photo" class="leftpos">
+            <input type="file" name="onload_avatar" class="border-left 1 border-bottom 1 border-right 1 border-top 1"-->
+            <p name="balance"></p>
+        </div>
+    </form>
+{% endblock %}

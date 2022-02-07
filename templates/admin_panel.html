@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Admin Panel
+{% endblock %}
+
+{% block main %}
+    <form action="admin" method="POST">
+        <div class="form-group">
+            <p class="p-0">Enter user id to block this user:</p>
+            <input class="form-control" name="block_user_id" autocomplete="off" autofocus class="form-control" type="text" placeholder="ID">
+            <p class="p-1">Enter User ID and amount to add money (1, 6.00)</p>
+            <input class="form-control" name="id_amount_addmoney" autocomplete="off" autofocus class="form-control" type="text" placeholder="ID, Amount">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+{% endblock %}

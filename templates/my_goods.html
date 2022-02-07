@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    My goods
+{% endblock %}
+
+{% block main %}
+    <form action="/mygoods" method="POST">
+        <div class="form-group">
+            <p>Enter good's name: </p>
+            <input class="form-control" name="good_name_toupload" autocomplete="off" autofocus class="form-control" type="text" placeholder="Name">
+            <p>Enter good's price: </p>
+            <input class="form-control" name="good_price_toupload" autocomplete="off" autofocus class="form-control" type="text" placeholder="Price">
+            <p>Enter good's link to download: </p>
+            <input class="form-control" name="good_link_toupload" autocomplete="off" autofocus class="form-control" type="text" placeholder="Link">
+        </div>
+        <div class="form-group">
+            <p>Enter good's ID to delete: </p>
+            <input class="form-control" name="delete_good" autocomplete="off" autofocus class="form-control" type="text" placeholder="Delete">
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+        <div class="container">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Good ID</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Upload Time</th>
+                        <th scope="col">Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for good in mygoods %}
+                        <tr>
+                            <td>{{ good["GoodId"] }}</td>
+                            <td>{{ good["Title"] }}</td>
+                            <td>USD {{ good["Price"] }}</td>
+                            <td>{{ good["UploadTime"] }}</td>
+                            <td>{{ good["Link"] }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+            </table>
+        </div>
+    </form>
+{% endblock %}
