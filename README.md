@@ -1,2 +1,2 @@
 # Tracker
-Веб-приложение для продажи товаров.
+Web application for selling goods (p.s. absolutely nasty code)
